@@ -29,7 +29,7 @@ struct MoviesView: View {
                         LazyHGrid(rows: gridItemLayout, spacing: 20){
                             ForEach(viewModel.upcomingMovies, id: \.id){movie in
                                 NavigationLink{
-                                    EmptyView()
+                                    MovieDetailView(movie: movie)
                                 }label: {
                                     KFImage(URL(string: "\(Constants.ulrImages)\(movie.poster_path ?? Constants.placeholder)"))
                                         .resizable()
@@ -54,7 +54,7 @@ struct MoviesView: View {
                         LazyHGrid(rows: gridItemLayout, spacing: 20){
                             ForEach(viewModel.nowPlayingMovies, id: \.id){movie in
                                 NavigationLink{
-                                    EmptyView()
+                                    MovieDetailView(movie: movie)
                                 }label: {
                                     KFImage(URL(string: "\(Constants.ulrImages)\(movie.poster_path ?? Constants.placeholder)"))
                                         .resizable()
@@ -79,7 +79,7 @@ struct MoviesView: View {
                         LazyHGrid(rows: gridItemLayout, spacing: 20){
                             ForEach(viewModel.trendingMovies, id: \.id){movie in
                                 NavigationLink{
-                                    EmptyView()
+                                    MovieDetailView(movie: movie)
                                 }label: {
                                     KFImage(URL(string: "\(Constants.ulrImages)\(movie.poster_path ?? Constants.placeholder)"))
                                         .resizable()
